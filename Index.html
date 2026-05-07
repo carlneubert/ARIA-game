@@ -15,21 +15,21 @@
     --border: #2a2a3d;
     --accent: #8371fe;       /* was #7c6af7 — lifted to 4.5:1 on surface2 */
     --accent-btn: #5b47f5;   /* darker accent for white button text (5.73:1) */
-    --accent2: #c4447e;      /* was #f76aab — darkened to 4.69:1 for white text */
+    --accent2: #c4447e;      /* was #f76aub — darkened to 4.69:1 for white text */
     --green: #4ade80;
     --yellow: #facc15;
     --red: #f87171;
-    --but text: #e8e8f0;
+    --text: #e8e8f0;
     --muted: #a0a0a8;        /* was #6b6b8a — lifted to 6.33:1 on surface2, 7.46:1 on bg */
     --code-bg: #0a0a10;
   }
 
-- { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-background: var(–bg);
-color: var(–text);
-font-family: ‘DM Sans’, sans-serif;
+background: var(--bg);
+color: var(--text);
+font-family: 'DM Sans', sans-serif;
 min-height: 100vh;
 display: flex;
 flex-direction: column;
@@ -38,7 +38,7 @@ align-items: center;
 
 /* Subtle grid background */
 body::before {
-content: ‘’;
+content: '';
 position: fixed;
 inset: 0;
 background-image:
@@ -58,24 +58,24 @@ justify-content: space-between;
 }
 
 .logo {
-font-family: ‘Space Mono’, monospace;
+font-family: 'Space Mono', monospace;
 font-size: 22px;
 font-weight: 700;
 letter-spacing: -0.5px;
 }
-.logo span { color: var(–accent); }
-.logo em { color: var(–accent2); font-style: normal; }
+.logo span { color: var(--accent); }
+.logo em { color: var(--accent2); font-style: normal; }
 
 .streak-badge {
-background: var(–surface2);
-border: 1px solid var(–border);
+background: var(--surface2);
+border: 1px solid var(--border);
 border-radius: 20px;
 padding: 6px 14px;
 font-size: 13px;
-font-family: ‘Space Mono’, monospace;
-color: var(–muted);
+font-family: 'Space Mono', monospace;
+color: var(--muted);
 }
-.streak-badge strong { color: var(–yellow); }
+.streak-badge strong { color: var(--yellow); }
 
 main {
 width: 100%;
@@ -96,7 +96,7 @@ margin-bottom: 32px;
 
 .progress-track {
 flex: 1;
-background: var(–surface2);
+background: var(--surface2);
 border-radius: 4px;
 height: 4px;
 overflow: hidden;
@@ -104,7 +104,7 @@ overflow: hidden;
 .progress-fill {
 height: 100%;
 border-radius: 4px;
-background: linear-gradient(90deg, var(–accent), var(–accent2));
+background: linear-gradient(90deg, var(--accent), var(--accent2));
 transition: width 0.5s ease;
 }
 
@@ -113,8 +113,8 @@ display: flex;
 align-items: center;
 gap: 8px;
 font-size: 12px;
-color: var(–muted);
-font-family: ‘Space Mono’, monospace;
+color: var(--muted);
+font-family: 'Space Mono', monospace;
 white-space: nowrap;
 }
 
@@ -131,9 +131,9 @@ margin-bottom: 14px;
 }
 
 .question-number {
-font-family: ‘Space Mono’, monospace;
+font-family: 'Space Mono', monospace;
 font-size: 11px;
-color: var(–muted);
+color: var(--muted);
 letter-spacing: 1px;
 text-transform: uppercase;
 }
@@ -142,7 +142,7 @@ text-transform: uppercase;
 font-size: 24px;
 font-weight: 700;
 line-height: 1.4;
-color: var(–text);
+color: var(--text);
 letter-spacing: -0.3px;
 }
 
@@ -153,8 +153,8 @@ margin-bottom: 28px;
 
 .evidence-label {
 font-size: 11px;
-font-family: ‘Space Mono’, monospace;
-color: var(–muted);
+font-family: 'Space Mono', monospace;
+color: var(--muted);
 text-transform: uppercase;
 letter-spacing: 1px;
 margin-bottom: 8px;
@@ -164,25 +164,25 @@ gap: 6px;
 }
 
 .evidence-label::before {
-content: ‘’;
+content: '';
 display: block;
 width: 3px;
 height: 10px;
-background: var(–accent);
+background: var(--accent);
 border-radius: 2px;
 }
 
 .scenario-card {
-background: var(–surface);
-border: 1px solid var(–border);
+background: var(--surface);
+border: 1px solid var(--border);
 border-radius: 10px;
 overflow: hidden;
 }
 
 .scenario-header {
 padding: 8px 14px;
-background: var(–surface2);
-border-bottom: 1px solid var(–border);
+background: var(--surface2);
+border-bottom: 1px solid var(--border);
 display: flex;
 align-items: center;
 gap: 6px;
@@ -196,16 +196,16 @@ gap: 6px;
 .scenario-label {
 margin-left: 2px;
 font-size: 10px;
-color: var(–muted);
-font-family: ‘Space Mono’, monospace;
+color: var(--muted);
+font-family: 'Space Mono', monospace;
 letter-spacing: 1px;
 text-transform: uppercase;
 }
 
 .code-block {
 padding: 20px;
-background: var(–code-bg);
-font-family: ‘Space Mono’, monospace;
+background: var(--code-bg);
+font-family: 'Space Mono', monospace;
 font-size: 13px;
 line-height: 1.8;
 overflow-x: auto;
@@ -216,10 +216,10 @@ word-break: break-word;
 .code-blank {
 display: inline-block;
 background: rgba(131,113,254,0.15);
-border: 2px dashed var(–accent);
+border: 2px dashed var(--accent);
 border-radius: 4px;
 padding: 0 10px;
-color: var(–accent);
+color: var(--accent);
 min-width: 60px;
 text-align: center;
 animation: pulse-border 2s ease-in-out infinite;
@@ -227,8 +227,8 @@ font-weight: 700;
 }
 
 @keyframes pulse-border {
-0%, 100% { border-color: var(–accent); box-shadow: 0 0 0 0 rgba(131,113,254,0); }
-50% { border-color: var(–accent2); box-shadow: 0 0 8px rgba(131,113,254,0.3); }
+0%, 100% { border-color: var(--accent); box-shadow: 0 0 0 0 rgba(131,113,254,0); }
+50% { border-color: var(--accent2); box-shadow: 0 0 8px rgba(131,113,254,0.3); }
 }
 
 /* Context — collapsed by default, subtle */
@@ -238,15 +238,15 @@ display: flex;
 align-items: flex-start;
 gap: 6px;
 font-size: 12px;
-color: var(–muted);
+color: var(--muted);
 line-height: 1.5;
 cursor: default;
 }
 .context-toggle summary {
 cursor: pointer;
 font-size: 11px;
-font-family: ‘Space Mono’, monospace;
-color: var(–muted);
+font-family: 'Space Mono', monospace;
+color: var(--muted);
 text-transform: uppercase;
 letter-spacing: 0.8px;
 list-style: none;
@@ -257,13 +257,13 @@ padding: 4px 0;
 }
 .context-toggle summary::-webkit-details-marker { display: none; }
 .context-toggle summary::before {
-content: ‘▸’;
+content: '▸';
 font-size: 10px;
 transition: transform 0.2s;
 }
 .context-toggle[open] summary::before { transform: rotate(90deg); }
 .context-toggle summary:focus-visible {
-outline: 2px solid var(–yellow);
+outline: 2px solid var(--yellow);
 outline-offset: 2px;
 border-radius: 2px;
 }
@@ -286,8 +286,8 @@ margin-bottom: 16px;
 
 .answers-label {
 font-size: 11px;
-font-family: ‘Space Mono’, monospace;
-color: var(–muted);
+font-family: 'Space Mono', monospace;
+color: var(--muted);
 text-transform: uppercase;
 letter-spacing: 1px;
 margin-bottom: 10px;
@@ -296,11 +296,11 @@ align-items: center;
 gap: 6px;
 }
 .answers-label::before {
-content: ‘’;
+content: '';
 display: block;
 width: 3px;
 height: 10px;
-background: var(–accent2);
+background: var(--accent2);
 border-radius: 2px;
 }
 
@@ -318,57 +318,57 @@ gap: 8px;
 
 .guess-tile {
 flex: 1;
-background: var(–surface2);
-border: 1px solid var(–border);
+background: var(--surface2);
+border: 1px solid var(--border);
 border-radius: 8px;
 padding: 13px 16px;
-font-family: ‘Space Mono’, monospace;
+font-family: 'Space Mono', monospace;
 font-size: 13px;
 cursor: pointer;
 transition: all 0.15s ease;
-color: var(–text);
+color: var(--text);
 text-align: left;
 position: relative;
 overflow: hidden;
 }
 
 .guess-tile:hover:not(:disabled) {
-border-color: var(–accent);
+border-color: var(--accent);
 background: rgba(124,106,247,0.08);
 transform: translateY(-1px);
 }
 
 .guess-tile:focus-visible {
-outline: 3px solid var(–yellow);
+outline: 3px solid var(--yellow);
 outline-offset: 2px;
 }
 
 .guess-tile:disabled { cursor: default; opacity: 0.85; }
 
 .guess-tile.selected {
-border-color: var(–accent);
+border-color: var(--accent);
 background: rgba(124,106,247,0.15);
-color: var(–accent);
+color: var(--accent);
 }
 
 .guess-tile.correct {
-border-color: var(–green);
+border-color: var(--green);
 background: rgba(74,222,128,0.12);
-color: var(–green);
+color: var(--green);
 animation: flip-in 0.4s ease;
 }
 
 .guess-tile.incorrect {
-border-color: var(–red);
+border-color: var(--red);
 background: rgba(248,113,113,0.1);
-color: var(–red);
+color: var(--red);
 animation: shake 0.4s ease;
 }
 
 .guess-tile.close {
-border-color: var(–yellow);
+border-color: var(--yellow);
 background: rgba(250,204,21,0.1);
-color: var(–yellow);
+color: var(--yellow);
 }
 
 @keyframes flip-in {
@@ -387,9 +387,9 @@ color: var(–yellow);
 
 .tile-label {
 font-size: 12px;
-color: var(–muted);
+color: var(--muted);
 margin-top: 4px;
-font-family: ‘DM Sans’, sans-serif;
+font-family: 'DM Sans', sans-serif;
 font-weight: 300;
 }
 
@@ -401,8 +401,8 @@ gap: 8px;
 }
 
 .hint-pill {
-background: var(–surface);
-border: 1px solid var(–border);
+background: var(--surface);
+border: 1px solid var(--border);
 border-radius: 8px;
 padding: 10px 14px;
 font-size: 13px;
@@ -422,27 +422,27 @@ to { opacity: 1; transform: translateY(0); }
 
 /* Feedback overlay */
 .feedback-box {
-background: var(–surface);
-border: 1px solid var(–border);
+background: var(--surface);
+border: 1px solid var(--border);
 border-radius: 12px;
 padding: 20px;
 text-align: center;
 animation: slide-in 0.4s ease;
 }
 
-.feedback-box.success { border-color: var(–green); }
-.feedback-box.fail { border-color: var(–red); }
+.feedback-box.success { border-color: var(--green); }
+.feedback-box.fail { border-color: var(--red); }
 
 .feedback-emoji { font-size: 40px; margin-bottom: 10px; }
 
 .feedback-title {
-font-family: ‘Space Mono’, monospace;
+font-family: 'Space Mono', monospace;
 font-size: 18px;
 font-weight: 700;
 margin-bottom: 6px;
 }
-.feedback-box.success .feedback-title { color: var(–green); }
-.feedback-box.fail .feedback-title { color: var(–red); }
+.feedback-box.success .feedback-title { color: var(--green); }
+.feedback-box.fail .feedback-title { color: var(--red); }
 
 .feedback-explanation {
 font-size: 14px;
@@ -452,23 +452,23 @@ margin-bottom: 16px;
 }
 
 .answer-reveal {
-font-family: ‘Space Mono’, monospace;
-background: var(–code-bg);
+font-family: 'Space Mono', monospace;
+background: var(--code-bg);
 border-radius: 8px;
 padding: 10px 16px;
 margin-bottom: 16px;
 font-size: 13px;
-color: var(–green);
+color: var(--green);
 border: 1px solid rgba(74,222,128,0.3);
 }
 
 .next-btn {
-background: linear-gradient(135deg, var(–accent-btn), var(–accent2));
+background: linear-gradient(135deg, var(--accent-btn), var(--accent2));
 color: white;
 border: none;
 border-radius: 8px;
 padding: 12px 28px;
-font-family: ‘Space Mono’, monospace;
+font-family: 'Space Mono', monospace;
 font-size: 14px;
 font-weight: 700;
 cursor: pointer;
@@ -482,7 +482,7 @@ box-shadow: 0 8px 24px rgba(91,71,245,0.4);
 }
 
 .next-btn:focus-visible {
-outline: 3px solid var(–yellow);
+outline: 3px solid var(--yellow);
 outline-offset: 3px;
 }
 
@@ -493,20 +493,20 @@ gap: 10px;
 }
 .score-card {
 flex: 1;
-background: var(–surface);
-border: 1px solid var(–border);
+background: var(--surface);
+border: 1px solid var(--border);
 border-radius: 8px;
 padding: 12px;
 text-align: center;
 }
 .score-val {
-font-family: ‘Space Mono’, monospace;
+font-family: 'Space Mono', monospace;
 font-size: 24px;
 font-weight: 700;
 }
 .score-lbl {
 font-size: 11px;
-color: var(–muted);
+color: var(--muted);
 margin-top: 2px;
 text-transform: uppercase;
 letter-spacing: 0.5px;
@@ -518,7 +518,7 @@ text-align: center;
 padding: 30px 20px;
 }
 .end-screen h2 {
-font-family: ‘Space Mono’, monospace;
+font-family: 'Space Mono', monospace;
 font-size: 26px;
 margin-bottom: 10px;
 }
@@ -533,13 +533,13 @@ line-height: 1.6;
 display: inline-flex;
 align-items: center;
 font-size: 10px;
-font-family: ‘Space Mono’, monospace;
+font-family: 'Space Mono', monospace;
 text-transform: uppercase;
 letter-spacing: 1px;
 padding: 2px 7px;
 border-radius: 4px;
 background: rgba(131,113,254,0.12);
-color: var(–accent);
+color: var(--accent);
 border: 1px solid rgba(131,113,254,0.25);
 }
 
@@ -558,36 +558,35 @@ align-items: center;
 width: 8px;
 height: 8px;
 border-radius: 50%;
-background: var(–border);
+background: var(--border);
 transition: all 0.3s ease;
 }
-.attempt-dot.used { background: var(–red); }
-.attempt-dot.used.correct-dot { background: var(–green); }
+.attempt-dot.used { background: var(--red); }
+.attempt-dot.used.correct-dot { background: var(--green); }
 
-<style>
-  .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--yellow);
-    color: #000;
-    padding: 8px 16px;
-    font-weight: 700;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    border-radius: 0 0 8px 0;
-    z-index: 100;
-    text-decoration: none;
-    transition: top 0.2s;
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--yellow);
+  color: #000;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  border-radius: 0 0 8px 0;
+  z-index: 100;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 0; }
+/* Prevent animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
-  .skip-link:focus { top: 0; }
-  /* Prevent animation for users who prefer reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      transition-duration: 0.01ms !important;
-    }
-  }
+}
 </style>
 
 </head>
@@ -620,7 +619,7 @@ const QUESTIONS = [
       { value: `id="main-nav"`, label: "Gives it a unique ID", hint: "id is for referencing elements — not read as a landmark by screen readers" },
     ],
     correctIndex: 0,
-    explanation: `The <nav> element already implies landmark semantics in HTML5, but explicitly adding role="navigation" reinforces this. Screen reader users can jump between landmarks using keyboard shortcuts (e.g., D in NVDA, R in VoiceOver).`,
+    explanation: `The <nav> element already implies landmark semantics in HTML5, but explicitly adding role="navigation" reinforces this. Screen reader users can jump between landmarks using keyboard shortcuts.`,
     hints: [
       "💡 ARIA roles describe what kind of thing an element IS — button, dialog, navigation, etc.",
       "🔍 Landmark roles let screen reader users jump around a page without reading everything.",
@@ -642,7 +641,7 @@ const QUESTIONS = [
       { value: `aria-selected="false"`, label: "Marks it unselected", hint: "aria-selected is for tabs and listbox options — not for expand/collapse" },
     ],
     correctIndex: 1,
-    explanation: `aria-expanded tells screen readers whether the associated panel is open (true) or closed (false). You must toggle it via JavaScript when the user interacts. Combined with aria-controls pointing to the panel's id, this creates a complete relationship.`,
+    explanation: `aria-expanded tells screen readers whether the associated panel is open (true) or closed (false). You must toggle it via JavaScript when the user interacts.`,
     hints: [
       "💡 ARIA states (like aria-expanded) reflect the current condition of an element — they must update dynamically.",
       "🔍 Without aria-expanded, a sighted user sees the arrow change, but a screen reader user hears nothing change.",
@@ -664,7 +663,7 @@ const QUESTIONS = [
       { value: `name="search"`, label: "Names the form field", hint: "name is for form submission, not accessibility — screen readers ignore it as a label" },
     ],
     correctIndex: 2,
-    explanation: `aria-label provides an accessible name directly on the element when no visible label is present or linked. It's announced when the input receives focus. Prefer a real <label> when possible, but aria-label is the right tool when a visual label would be redundant or impractical.`,
+    explanation: `aria-label provides an accessible name directly on the element when no visible label is present or linked. It's announced when the input receives focus.`,
     hints: [
       "💡 Every form input needs an accessible name — that's what screen readers read aloud when the field is focused.",
       "🔍 There are 3 ways to name an input: <label for>, aria-labelledby, or aria-label. Placeholder doesn't count.",
@@ -686,7 +685,7 @@ const QUESTIONS = [
       { value: `aria-atomic="true"`, label: "Announces the whole region", hint: "aria-atomic controls how much is read (whole region vs. just the change) — but doesn't trigger announcement by itself" },
     ],
     correctIndex: 2,
-    explanation: `role="alert" is shorthand for aria-live="assertive" + aria-atomic="true". It interrupts whatever the screen reader is saying and announces the new content immediately. Use it for errors and time-sensitive information. For gentler notifications (progress, counts), prefer role="status" (polite).`,
+    explanation: `role="alert" is shorthand for aria-live="assertive" + aria-atomic="true". It interrupts whatever the screen reader is saying and announces the new content immediately.`,
     hints: [
       "💡 By default, dynamically injected content is completely silent to screen readers.",
       "🔍 Live regions tell the browser to watch for content changes and read them aloud — no focus movement needed.",
@@ -708,7 +707,7 @@ const QUESTIONS = [
       { value: `aria-owns="dialog-title"`, label: "Claims ownership of child", hint: "aria-owns restructures the accessibility tree parent-child relationships — not for naming" },
     ],
     correctIndex: 2,
-    explanation: `aria-labelledby points to another element's ID and uses that element's text content as the accessible name. This is preferred over aria-label when the name is already visible on screen — it avoids duplication and stays in sync if text changes. When the dialog opens, most screen readers announce "Confirm Deletion, dialog."`,
+    explanation: `aria-labelledby points to another element's ID and uses that element's text content as the accessible name. This is preferred over aria-label when the name is already visible on screen.`,
     hints: [
       "💡 aria-labelledby and aria-describedby both reference IDs — but name vs. description are read at different times.",
       "🔍 The accessible name is announced first, then role, then description. So: 'Confirm Deletion [dialog]' then the description on pause.",
@@ -730,7 +729,7 @@ const QUESTIONS = [
       { value: `aria-current="true"`, label: "Marks current page/item", hint: "aria-current marks the active item in a set (nav links, steps, dates) — not a toggle state" },
     ],
     correctIndex: 2,
-    explanation: `aria-pressed turns a <button> into a toggle button. When true, screen readers announce "Mute, pressed, button." When false, "Mute, not pressed, button." Always toggle this attribute in JavaScript when the state changes. This is distinct from aria-checked (for checkboxes/switches) and aria-selected (for listboxes/tabs).`,
+    explanation: `aria-pressed turns a <button> into a toggle button. When true, screen readers announce "Mute, pressed, button." When false, "Mute, not pressed, button." Always toggle this attribute via JavaScript.`,
     hints: [
       "💡 ARIA has different state attributes for different widget patterns — using the wrong one confuses users.",
       "🔍 Toggle buttons get aria-pressed. Checkboxes get aria-checked. Tabs get aria-selected. Navlinks get aria-current.",
@@ -752,7 +751,7 @@ const QUESTIONS = [
       { value: `display: none`, label: "Hides it visually", hint: "display:none hides visually AND from AT — but that's CSS, and breaks layout intent. aria-hidden is more surgical." },
     ],
     correctIndex: 1,
-    explanation: `aria-hidden="true" removes an element and all its children from the accessibility tree entirely. Screen readers skip it completely. Use it for decorative images, icon fonts, duplicated text, and visual noise. Never use it on interactive elements or elements containing focusable children.`,
+    explanation: `aria-hidden="true" removes an element and all its children from the accessibility tree entirely. Screen readers skip it completely. Use it for decorative images, icon fonts, and visual separators.`,
     hints: [
       "💡 The accessibility tree is a parallel structure the browser builds for assistive tech — aria-hidden is a way to prune it.",
       "🔍 Rule of thumb: decorative images and icon-only flourishes should always have aria-hidden='true'.",
@@ -768,13 +767,13 @@ const QUESTIONS = [
     codeAfter: `\n/>\n<p id="pw-rules">Min 8 chars, 1 number</p>`,
     question: "What links the input to the separate requirements text so it's read as supplementary description?",
     options: [
-      { value: `aria-details="pw-rules"`, label: "Links extended description", hint: "aria-details links to complex reference content — appropriate for figures, code samples. For inline hints, aria-describedby is standard." },
+      { value: `aria-details="pw-rules"`, label: "Links extended description", hint: "aria-details links to complex reference content — appropriate for figures, code samples. For inline hints, use aria-describedby" },
       { value: `aria-labelledby="pw-rules"`, label: "Uses rules text as the name", hint: "This would replace 'Password' with the requirements text as the accessible name — confusing" },
       { value: `aria-controls="pw-rules"`, label: "Controls the rules element", hint: "aria-controls indicates the element controls another's content (like accordions) — not a description link" },
       { value: `aria-describedby="pw-rules"`, label: "Links supplementary hint text", hint: "aria-describedby connects a description: read after the name + role, usually after a short pause" },
     ],
     correctIndex: 3,
-    explanation: `aria-describedby links supplementary description text. When the input is focused, screen readers first announce the accessible name ("Password") and role ("edit text"), then after a pause read the description: "Min 8 chars, 1 number." It's the perfect tool for help text, error messages, and format hints.`,
+    explanation: `aria-describedby links supplementary description text. When the input is focused, screen readers first announce the accessible name ("Password") and role ("edit text"), then the description.`,
     hints: [
       "💡 Accessible name and description are separate concepts — name identifies, description explains.",
       "🔍 Multiple IDs work: aria-describedby='error-msg pw-rules' — both get read in order.",
@@ -840,7 +839,6 @@ function render() {
       } else if (state.selectedOption === i) {
         cls += ' selected';
       }
-      let ariaCurrent = '';
       let ariaLabel = `Option ${i + 1}: ${opt.value}. ${opt.label}.`;
       if (state.revealed) {
         if (i === q.correctIndex) ariaLabel += ' Correct answer.';
@@ -900,120 +898,139 @@ function render() {
           <span class="scenario-label">index.html ${diffDots}</span>
         </div>
         <pre class="code-block" tabindex="0" aria-label="HTML code snippet with a missing attribute shown as a question mark placeholder"><code>${syntaxHighlight(codeHtml)}</code></pre>
+      </div>
+      <details class="context-toggle">
+        <summary>Scenario context</summary>
+        <div class="context-body">${q.context}</div>
+      </details>
+    </div>
 
-```
-  </div>
-  <details class="context-toggle">
-    <summary>Scenario context</summary>
-    <div class="context-body">${q.context}</div>
-  </details>
-</div>
+    <!-- TIER 3: Answer tiles -->
+    <div class="answers-section">
+      <div class="answers-label" aria-hidden="true">Choose the correct attribute</div>
+      <div class="guess-grid" role="group" aria-labelledby="question-text">${guessRows.join('')}</div>
+    </div>
 
-<!-- TIER 3: Answer tiles -->
-<div class="answers-section">
-  <div class="answers-label" aria-hidden="true">Choose the correct attribute</div>
-  <div class="guess-grid" role="group" aria-labelledby="question-text">${guessRows.join('')}</div>
-</div>
+    ${hintHtml ? `<div class="hints-area" aria-label="Hints" aria-live="polite" style="margin-top:4px">${hintHtml}</div>` : ''}
 
-${hintHtml ? `<div class="hints-area" aria-label="Hints" aria-live="polite" style="margin-top:4px">${hintHtml}</div>` : ''}
+    ${feedbackHtml}
+  `;
 
-${feedbackHtml}
-```
-
-`;
-
-document.getElementById(‘streak-val’).textContent = state.streak;
+  document.getElementById('streak-val').textContent = state.streak;
 }
 
 function syntaxHighlight(html) {
-return html
-.replace(/(</?[\w-]+)/g, ‘<span class="code-tag">$1</span>’)
-.replace(/([\w-]+=)(?!”[^”]*<)/g, ‘<span class="code-attr">$1</span>’)
-.replace(/”([^<”]+)”/g, ‘”<span class="code-val">$1</span>”’);
+  return html
+    .replace(/(<\/?[\w-]+)/g, '<span class="code-tag">$1</span>')
+    .replace(/([\w-]+=)(?!"[^"]*<)/g, '<span class="code-attr">$1</span>')
+    .replace(/"([^<"]+)"/g, '"<span class="code-val">$1</span>"');
 }
 
 function escHtml(str) {
-return str.replace(/&/g,’&’).replace(/</g,’<’).replace(/>/g,’>’).replace(/”/g,’"’);
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
 function selectOption(i) {
-if (state.revealed) return;
-state.selectedOption = i;
-const q = state.questions[state.currentIdx];
+  if (state.revealed) return;
+  state.selectedOption = i;
+  const q = state.questions[state.currentIdx];
 
-if (i === q.correctIndex) {
-state.revealed = true;
-state.correct = true;
-const points = Math.max(10 - state.attempts * 3, 1);
-state.score += points;
-state.streak++;
-state.totalCorrect++;
-} else {
-state.attempts++;
-if (state.attempts < state.maxAttempts) {
-if (state.hintsShown < q.hints.length) state.hintsShown++;
-render();
-return;
-} else {
-state.revealed = true;
-state.correct = false;
-state.streak = 0;
-}
-}
-render();
-document.getElementById(‘streak-val’).textContent = state.streak;
+  if (i === q.correctIndex) {
+    state.revealed = true;
+    state.correct = true;
+    const points = Math.max(10 - state.attempts * 3, 1);
+    state.score += points;
+    state.streak++;
+    state.totalCorrect++;
+  } else {
+    state.attempts++;
+    if (state.attempts < state.maxAttempts) {
+      if (state.hintsShown < q.hints.length) state.hintsShown++;
+      render();
+      return;
+    } else {
+      state.revealed = true;
+      state.correct = false;
+      state.streak = 0;
+    }
+  }
+  render();
+  document.getElementById('streak-val').textContent = state.streak;
 }
 
 function renderFeedback(q) {
-if (state.correct) {
-const msgs = [“Nailed it!”, “Correct!”, “You got it!”, “Spot on!”, “That’s right!”];
-const msg = msgs[state.currentIdx % msgs.length];
-return ` <div class="feedback-box success" role="status" aria-live="assertive"> <div class="feedback-emoji" aria-hidden="true">✅</div> <div class="feedback-title" aria-hidden="true">${msg}</div> <p class="feedback-explanation">${q.explanation}</p> <button type="button" class="next-btn" onclick="nextQuestion()">Next Challenge →</button> </div>`;
-} else {
-return ` <div class="feedback-box fail" role="alert" aria-live="assertive"> <div class="feedback-emoji" aria-hidden="true">💡</div> <div class="feedback-title" aria-hidden="true">Learning moment</div> <div class="answer-reveal">✓ ${escHtml(q.options[q.correctIndex].value)}</div> <p class="feedback-explanation">${q.explanation}</p> <button type="button" class="next-btn" onclick="nextQuestion()">Next Challenge →</button> </div>`;
-}
+  if (state.correct) {
+    const msgs = ["Nailed it!", "Correct!", "You got it!", "Spot on!", "That's right!"];
+    const msg = msgs[state.currentIdx % msgs.length];
+    return `
+      <div class="feedback-box success" role="status" aria-live="assertive">
+        <div class="feedback-emoji" aria-hidden="true">✅</div>
+        <div class="feedback-title" aria-hidden="true">${msg}</div>
+        <p class="feedback-explanation">${q.explanation}</p>
+        <button class="next-btn" onclick="nextQuestion()">Next Challenge →</button>
+      </div>
+    `;
+  } else {
+    return `
+      <div class="feedback-box fail" role="alert" aria-live="assertive">
+        <div class="feedback-emoji" aria-hidden="true">💡</div>
+        <div class="feedback-title" aria-hidden="true">Learning moment</div>
+        <p class="feedback-explanation">${q.explanation}</p>
+        <div class="answer-reveal">Correct answer: <code>${q.options[q.correctIndex].value}</code></div>
+        <button class="next-btn" onclick="nextQuestion()">Next Challenge →</button>
+      </div>
+    `;
+  }
 }
 
 function nextQuestion() {
-state.currentIdx++;
-state.attempts = 0;
-state.hintsShown = 0;
-state.selectedOption = null;
-state.revealed = false;
-state.correct = false;
-render();
+  state.currentIdx++;
+  state.attempts = 0;
+  state.hintsShown = 0;
+  state.selectedOption = null;
+  state.revealed = false;
+  state.correct = false;
+  render();
 }
 
 function renderEndScreen(app) {
-const total = state.questions.length;
-const pct = Math.round((state.totalCorrect / total) * 100);
-let grade, emoji;
-if (pct >= 90) { grade = “ARIA Expert”; emoji = “🏆”; }
-else if (pct >= 70) { grade = “Good Grasp”; emoji = “🌟”; }
-else if (pct >= 50) { grade = “Keep Practicing”; emoji = “📚”; }
-else { grade = “Just Getting Started”; emoji = “🌱”; }
+  const total = state.questions.length;
+  const pct = Math.round((state.totalCorrect / total) * 100);
+  let grade, emoji;
+  if (pct >= 90) { grade = "ARIA Expert"; emoji = "🏆"; }
+  else if (pct >= 70) { grade = "Good Grasp"; emoji = "🌟"; }
+  else if (pct >= 50) { grade = "Keep Practicing"; emoji = "📚"; }
+  else { grade = "Just Getting Started"; emoji = "🌱"; }
 
-app.innerHTML = `<div class="end-screen" role="status" aria-live="polite"> <div style="font-size:56px;margin-bottom:12px" aria-hidden="true">${emoji}</div> <h2>${grade}</h2> <p>You answered <strong>${state.totalCorrect} of ${total}</strong> correctly (${pct}%) and scored <strong>${state.score} points</strong>.</p> <div class="score-row" style="max-width:360px;margin:0 auto 24px" role="list" aria-label="Final scores"> <div class="score-card" role="listitem"> <div class="score-val" style="color:var(--accent)" aria-label="${state.score} points">${state.score}</div> <div class="score-lbl" aria-hidden="true">Points</div> </div> <div class="score-card" role="listitem"> <div class="score-val" style="color:var(--green)" aria-label="${state.totalCorrect} out of ${total} correct">${state.totalCorrect}/${total}</div> <div class="score-lbl" aria-hidden="true">Correct</div> </div> <div class="score-card" role="listitem"> <div class="score-val" style="color:var(--yellow)" aria-label="Final streak: ${state.streak}">${state.streak}</div> <div class="score-lbl" aria-hidden="true">Final Streak</div> </div> </div> <button type="button" class="next-btn" onclick="restartGame()">Play Again ↺</button> </div>`;
+  app.innerHTML = `
+    <div class="end-screen" role="status" aria-live="polite">
+      <div style="font-size:56px;margin-bottom:12px" aria-hidden="true">${emoji}</div>
+      <h2>${grade}</h2>
+      <p>You answered <strong>${state.totalCorrect}/${total}</strong> correctly — <strong>${pct}%</strong></p>
+      <button class="next-btn" style="margin-top:16px" onclick="restartGame()">Play Again 🔄</button>
+    </div>
+  `;
 }
 
 function restartGame() {
-state = {
-questions: shuffle([…QUESTIONS]),
-currentIdx: 0,
-score: 0,
-streak: 0,
-attempts: 0,
-maxAttempts: 3,
-hintsShown: 0,
-selectedOption: null,
-revealed: false,
-correct: false,
-totalCorrect: 0,
-};
-render();
+  state = {
+    questions: shuffle([...QUESTIONS]),
+    currentIdx: 0,
+    score: 0,
+    streak: 0,
+    attempts: 0,
+    maxAttempts: 3,
+    hintsShown: 0,
+    selectedOption: null,
+    revealed: false,
+    correct: false,
+    totalCorrect: 0,
+  };
+  render();
 }
 
-render();
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', render);
 </script>
 
 </body>
